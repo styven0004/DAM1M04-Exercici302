@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="ca">
 <head>
   {{> header}}
-  <link rel="stylesheet" href="/estils.css">
   <title>Sakila - Movies</title>
 </head>
 <body>
@@ -11,22 +10,29 @@
   <main class="container">
     <h1>🎬 Llistat de Pel·lícules (Top 15)</h1>
 
-    <section>
-      {{#each movies}}
-        <article class="card">
-          <h2>{{title}} ({{release_year}})</h2>
+    <p>Informació actualitzada de la base de dades Sakila</p>
 
-          <p class="muted">
-            {{description}}
-          </p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Títol</th>
+          <th>Any</th>
+          <th>Descripció</th>
+          <th>Actors</th>
+        </tr>
+      </thead>
 
-          <p>
-            <strong>Actors:</strong><br>
-            {{actors}}
-          </p>
-        </article>
-      {{/each}}
-    </section>
+      <tbody>
+        {{#each movies}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{release_year}}</td>
+            <td>{{description}}</td>
+            <td>{{actors}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </main>
 
   {{> footer}}
