@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  {{> header}}
+  <link rel="stylesheet" href="/estils.css">
+  <title>Sakila - Inici</title>
+</head>
+<body>
+  {{> menu}}
+
+  <main class="container">
+    <h1>Base de dades Sakila</h1>
+
+    <section class="cols-2">
+
+      <article class="card">
+        <h2>Pel·lícules (Top 5)</h2>
+
+        <ul class="list">
+          {{#each movies}}
+            <li class="list-item">
+              <strong>{{title}}</strong> ({{release_year}})<br>
+              <span class="muted">{{actors}}</span>
+            </li>
+          {{/each}}
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Categories (Top 5)</h2>
+
+        <ul class="list">
+          {{#each categories}}
+            <li class="list-item">
+              {{name}}
+            </li>
+          {{/each}}
+        </ul>
+      </article>
+
+    </section>
+  </main>
+
+  {{> footer}}
+</body>
+</html>

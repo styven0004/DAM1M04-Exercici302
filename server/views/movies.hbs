@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  {{> header}}
+  <title>Sakila - Movies</title>
+</head>
+<body>
+  {{> menu}}
+
+  <main class="container">
+    <h1>🎬 Llistat de Pel·lícules (Top 15)</h1>
+
+    <p>Informació actualitzada de la base de dades Sakila</p>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Títol</th>
+          <th>Any</th>
+          <th>Descripció</th>
+          <th>Actors</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each movies}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{release_year}}</td>
+            <td>{{description}}</td>
+            <td>{{actors}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </main>
+
+  {{> footer}}
+</body>
+</html>
